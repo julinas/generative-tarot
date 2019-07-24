@@ -26,13 +26,6 @@ with open (themepath, "r") as f:
 lemmaCounter = Counter()
 
 tobe = nlp('is')[0].lemma
-
-# testText = getSentiment('football')
-
-# test = TextBlob(testText).sentiment
-# print(test)
-# print(type(test.polarity))
-# print(test[1])
 		
 n = len(list(wordCounter))		
 for word in wordCounter.most_common(n):
@@ -76,47 +69,12 @@ for lemma in iter_of:
 
 n = len(list(lemmaCounter))
 trumps = lemmaCounter.most_common(22)
-# suits = list(lemmaCounter.most_common(78))[22:]
 therest = list(lemmaCounter.most_common(n))[22:]
 
 print(n)
-
 print(trumps)
-# print(suits)
-# print(therest)
 
-suit1 = [] # neg polarity # <0.5 subjectivity
-suit2 = [] # neg polarity # >=0.5 subjectivity
-suit3 = [] # pos polarity # <0.5 subjectivity
-suit4 = [] # pos polarity # >=0.5 subjectivity
+trumpspath = 'trumpstext'
 
-for ele in therest[746:]:
-
-	# (polarity[-1.0, 1.0], subjectivity[0.0, 0.1])
-	sentiment = getSentiment(ele[0])
-	if sentiment is None:
-		continue
-	p = sentiment.polarity
-	s = sentiment.subjectivity
-	if p < 0 and s < 0.5:
-		suit1.append(ele)
-	elif p < 0 and s >= 0.5:
-		suit2.append(ele)
-	elif p >= 0 and s < 0.5:
-		suit3.append(ele)
-	elif p >= 0 and s >= 0.5:
-		suit4.append(ele)
-	# time.sleep(random.randint(20, 30))
-
-print(len(suit1))
-print(suit1)
-
-print(len(suit2))
-print(suit2)
-
-print(len(suit3))
-print(suit3)
-
-print(len(suit4))
-print(suit4)
-	
+with open(trumpspath, 'w') as f:
+	f.write('{}'.format(trumps))
