@@ -3,7 +3,6 @@ from google_images_search import GoogleImagesSearch
 from io import BytesIO
 from PIL import Image, ImageChops
 import random
-import requests
 from textblob import TextBlob
 import time
 import urllib.request
@@ -46,6 +45,7 @@ def getImage(word, desired_width=225, desired_height=300, return_found=False):
 	result = results[0]
     
 	img = getImageFromGoogleSearchImage(result)
+	del gis
     
 	width, height = img.size
 	resize_ratio = max(desired_width/width, desired_height/height)

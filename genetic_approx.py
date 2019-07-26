@@ -111,7 +111,7 @@ def evolve(target_img):
             print("Fitness reached {}".format(CURR_FITNESS_SURPASSED))
             CURR_FITNESS_SURPASSED += .1
 
-        if (FITNESS_BEST_NORMALIZED > 90):
+        if (FITNESS_BEST_NORMALIZED > 85):
             # img = DNA_BEST.drawImage()
             # cvimg = np.array(img)
             # cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
@@ -149,6 +149,8 @@ def run_evolve(target_img, desired_width, desired_height):
 
     DNA_TEST = DNA()
     DNA_BEST = copy(DNA_TEST)
+    
+    target_img = target_img.transpose(Image.FLIP_TOP_BOTTOM)
     
     reachedRequiredFitness = False
     while not reachedRequiredFitness:
