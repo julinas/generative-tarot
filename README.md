@@ -7,5 +7,5 @@ tbd
 
 ### credits
 
-The image approximation used for generation of card illustrations was lightly adapted from Ding Peng's implementation (https://github.com/DING-PENG/image-approx.git) of Roger Alsing's algorithm: namely, evo.py and genetic.py.
+The image approximation used for generation of card illustrations was lightly adapted from alteredqualia[https://alteredqualia.com/visualization/evolve/]'s implementation of Roger Alsing's algorithm: namely, genetic_approx.py.
 

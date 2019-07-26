@@ -1,2 +1,4 @@
 __pycache__
 apikeys.py
+*.jpg
+*.png
