@@ -76,8 +76,8 @@ print(trumps)
 
 trumpspath = 'trumpstext'
 
-# with open(trumpspath, 'w') as f:
-	# f.write('{}'.format(trumps))
+with open(trumpspath, 'w') as f:
+	f.write('{}'.format(trumps))
 	
 therestpath = 'theresttext'
 with open(therestpath, 'a') as f:

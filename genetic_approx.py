@@ -100,30 +100,49 @@ def evolve(target_img):
         
         FITNESS_BEST = FITNESS_TEST
 
-        img = DNA_BEST.drawImage()
-        cvimg = np.array(img)
-        cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
+        # img = DNA_BEST.drawImage()
+        # cvimg = np.array(img)
+        # cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
         
-        cv2.imshow('image', cvimg)
-        cv2.waitKey(1)
+        # cv2.imshow('image', cvimg)
+        # cv2.waitKey(1)
         FITNESS_BEST_NORMALIZED = 100 * (1 - FITNESS_BEST/NORM_COEF)
         if (FITNESS_BEST_NORMALIZED > CURR_FITNESS_SURPASSED):
             print("Fitness reached {}".format(CURR_FITNESS_SURPASSED))
             CURR_FITNESS_SURPASSED += .1
 
-        if (FITNESS_BEST_NORMALIZED > 85):
-            img = DNA_BEST.drawImage()
-            cvimg = np.array(img)
-            cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
+        if (FITNESS_BEST_NORMALIZED > 90):
+            # img = DNA_BEST.drawImage()
+            # cvimg = np.array(img)
+            # cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
             
-            cv2.imshow('image', cvimg)
-            cv2.waitKey(1)
+            # cv2.imshow('image', cvimg)
+            # cv2.waitKey(1)
             return True
     else:
         pass_gene_mutation(DNA_BEST, DNA_TEST, CHANGED_SHAPE_INDEX)
+        
+def init():
+    global DNA_TEST, DNA_BEST, width, height, CHANGED_SHAPE_INDEX, NORM_COEF, FITNESS_TEST, FITNESS_BEST, CURR_FITNESS_SURPASSED
+    DNA_TEST = None
+    DNA_BEST = None
+
+    width = 225
+    height = 300
+
+    CHANGED_SHAPE_INDEX = 0
+
+    NORM_COEF = width*height*3*255
+    FITNESS_TEST = FITNESS_MAX
+    FITNESS_BEST = FITNESS_MAX
+
+    CURR_FITNESS_SURPASSED = 0
     
 def run_evolve(target_img, desired_width, desired_height):
     global DNA_TEST, DNA_BEST, width, height, NORM_COEF
+    
+    init()
+    
     width = desired_width
     height = desired_height
     NORM_COEF = width*height*4*255
@@ -139,4 +158,4 @@ def run_evolve(target_img, desired_width, desired_height):
         evolve(target_img)
         
     polygons = DNA_BEST.polygons
-    drawSvg(width, height, polygons, 'danger')
+    return polygons

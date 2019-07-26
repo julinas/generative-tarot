@@ -9,12 +9,8 @@ import time
 import urllib.request
 
 from apikeys import apikey, cx
-
 from genetic_approx import run_evolve
 
-cardspath = 'cards'
-desired_width = 225
-desired_height = 300
 BACKGROUND_COLOR = 'white'
 
 def getImageFromGoogleSearchImage(image):
@@ -28,40 +24,38 @@ def getImageFromGoogleSearchImage(image):
 	img = Image.open(my_bytes_io)
 	return img
 
-def getImage(word):
-	# gis = GoogleImagesSearch(apikey, cx)
+def getImage(word, desired_width=225, desired_height=300, return_found=False):
+	gis = GoogleImagesSearch(apikey, cx)
 
-	# # set search parameters
-	# # maximum results num is 10
-	# _search_params = {
-		# 'q': word,
-		# 'num': 10,
-		# 'safe': 'off',
-		# 'fileType': 'jpg',
-		# # 'imgType': 'photo',
-		# 'imgSize': 'large',
-	# }
+	# set search parameters
+	# maximum results num is 10
+	_search_params = {
+		'q': word,
+		'num': 10,
+		'safe': 'off',
+		'fileType': 'jpg',
+        'imgType': 'photo',
+		'imgSize': 'large',
+	}
 	
-	# # do search
-	# gis.search(search_params=_search_params)
+	# do search
+	gis.search(search_params=_search_params)
 	
-	# # randomly select 1 image from results
-	# results = random.sample(gis.results(), 1)
-	# result = results[0]
+	# randomly select 1 image from results
+	results = random.sample(gis.results(), 1)
+	result = results[0]
     
-	# img = getImageFromGoogleSearchImage(result)
+	img = getImageFromGoogleSearchImage(result)
     
-	img = Image.open("test2.jpg")
 	width, height = img.size
 	resize_ratio = max(desired_width/width, desired_height/height)
 	img = img.resize((round(resize_ratio * width), round(resize_ratio * height)))
     # 4-tuple defining the left, upper, right, and lower pixel coordinate
 	img = img.crop((0, 0, desired_width, desired_height))
     
-	img.show()
-	print("going into evolution")
-	new_img = run_evolve(img, desired_width, desired_height)
-    # new_img.show()
-
-getImage('mother')
-
+	# print("going into evolution")
+	polygons = run_evolve(img, desired_width, desired_height)
+    
+	if return_found:
+		return polygons, img
+	return polygons
