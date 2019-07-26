@@ -1,11 +1,14 @@
 from copy import deepcopy as copy
+import math
 import numpy as np
 from PIL import Image, ImageDraw, ImageChops
 import random
 from scipy.stats import truncnorm
-import math
+import sys
 
 import cv2
+
+from maketrumpcards import drawSvg
 
 DNA_TEST = None
 DNA_BEST = None
@@ -18,7 +21,7 @@ BACKGROUND_COLOR = 'white'
 CHANGED_SHAPE_INDEX = 0
 
 NORM_COEF = width*height*3*255
-FITNESS_MAX = 999923400656 # should change to max int value
+FITNESS_MAX = sys.maxsize
 FITNESS_TEST = FITNESS_MAX
 FITNESS_BEST = FITNESS_MAX
 
@@ -89,6 +92,7 @@ def evolve(target_img):
     global DNA_TEST, DNA_BEST, FITNESS_BEST, CURR_FITNESS_SURPASSED
     mutateDNA(DNA_TEST)
     FITNESS_TEST = compute_fitness(DNA_TEST, target_img)
+    FITNESS_BEST_NORMALIZED = 100 * (1 - FITNESS_BEST/NORM_COEF)
     
     # we want fitness/error to be lower
     if (FITNESS_TEST <= FITNESS_BEST):
@@ -107,16 +111,16 @@ def evolve(target_img):
             print("Fitness reached {}".format(CURR_FITNESS_SURPASSED))
             CURR_FITNESS_SURPASSED += .1
 
-        if (FITNESS_BEST_NORMALIZED > 90):
+        if (FITNESS_BEST_NORMALIZED > 85):
             img = DNA_BEST.drawImage()
             cvimg = np.array(img)
             cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
             
             cv2.imshow('image', cvimg)
-            cv2.waitKey(0)
+            cv2.waitKey(1)
+            return True
     else:
         pass_gene_mutation(DNA_BEST, DNA_TEST, CHANGED_SHAPE_INDEX)
-        
     
 def run_evolve(target_img, desired_width, desired_height):
     global DNA_TEST, DNA_BEST, width, height, NORM_COEF
@@ -127,6 +131,12 @@ def run_evolve(target_img, desired_width, desired_height):
     DNA_TEST = DNA()
     DNA_BEST = copy(DNA_TEST)
     
-    while True:
+    reachedRequiredFitness = False
+    while not reachedRequiredFitness:
+        reachedRequiredFitness = evolve(target_img)
+        
+    for i in range(5000):
         evolve(target_img)
         
+    polygons = DNA_BEST.polygons
+    drawSvg(width, height, polygons, 'danger')
