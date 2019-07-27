@@ -111,7 +111,7 @@ def evolve(target_img):
             print("Fitness reached {}".format(CURR_FITNESS_SURPASSED))
             CURR_FITNESS_SURPASSED += .1
 
-        if (FITNESS_BEST_NORMALIZED > 85):
+        if (FITNESS_BEST_NORMALIZED > 87):
             # img = DNA_BEST.drawImage()
             # cvimg = np.array(img)
             # cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
