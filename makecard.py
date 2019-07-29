@@ -1,6 +1,7 @@
 import drawSvg as draw 
 
-def drawSvg(w, h, polygons, word, saveto_path):
+def drawSvg(w, h, polygons, word, title, saveto_path):
+    print('in draw svg')
     framemargin = 10
     margin = 25
     titlemargin = 25
@@ -26,7 +27,7 @@ def drawSvg(w, h, polygons, word, saveto_path):
             shape[5][0] + margin, shape[5][1] + margin, \
             stroke_width=0, close=True, fill=hex, fill_opacity=opacity)
         d.append(p)
-    d.append(draw.Text(word.upper(), 20, width/2, -titlemargin/2, \
+    d.append(draw.Text(title.upper(), 20, width/2, -titlemargin/2, \
         center=0.5, fill='black'))
     d.saveSvg(saveto_path)
     

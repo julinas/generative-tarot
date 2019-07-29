@@ -100,24 +100,12 @@ def evolve(target_img):
         
         FITNESS_BEST = FITNESS_TEST
 
-        # img = DNA_BEST.drawImage()
-        # cvimg = np.array(img)
-        # cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
-        
-        # cv2.imshow('image', cvimg)
-        # cv2.waitKey(1)
         FITNESS_BEST_NORMALIZED = 100 * (1 - FITNESS_BEST/NORM_COEF)
         if (FITNESS_BEST_NORMALIZED > CURR_FITNESS_SURPASSED):
             print("Fitness reached {}".format(CURR_FITNESS_SURPASSED))
             CURR_FITNESS_SURPASSED += .1
 
-        if (FITNESS_BEST_NORMALIZED > 87):
-            # img = DNA_BEST.drawImage()
-            # cvimg = np.array(img)
-            # cvimg = cv2.cvtColor(cvimg, cv2.COLOR_BGR2RGB)
-            
-            # cv2.imshow('image', cvimg)
-            # cv2.waitKey(1)
+        if (FITNESS_BEST_NORMALIZED > 85):
             return True
     else:
         pass_gene_mutation(DNA_BEST, DNA_TEST, CHANGED_SHAPE_INDEX)
