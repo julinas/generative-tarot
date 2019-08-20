@@ -105,7 +105,7 @@ def evolve(target_img):
             print("Fitness reached {}".format(CURR_FITNESS_SURPASSED))
             CURR_FITNESS_SURPASSED += .1
 
-        if (FITNESS_BEST_NORMALIZED > 85):
+        if (FITNESS_BEST_NORMALIZED > 83):
             return True
     else:
         pass_gene_mutation(DNA_BEST, DNA_TEST, CHANGED_SHAPE_INDEX)

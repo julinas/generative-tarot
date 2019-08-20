@@ -2,8 +2,8 @@ from makecard import drawSvg
 import re
 import retrieve_image
 
-width = 225
-height = 300
+width = 183
+height = 309
 
 def maketrumpcard(i, keyword):
     polygons, foundimg = retrieve_image.getImage(keyword, desired_width=width, desired_height=height, return_found=True)
@@ -23,7 +23,7 @@ def maketrumpcards():
         with open(trumpspath, 'r') as f:
             line = f.readline()
             foundall = re.findall(regex, line)
-            for i, match in enumerate(foundall):
+            for i, match in list(enumerate(foundall))[2:3]:
                 print('processing {}'.format(match[0]))
                 maketrumpcard(i, match[0])
                 ff.write('**{} {}**\n\n'.format(i, match[0])) 

@@ -49,25 +49,25 @@
 ## Minor Arcana
 
 **1 of earth**
-land, state, institution, reality, creation, manhood, initiation, country, humankind, world, humanity, earth, man, farming
+humankind, creation, farming, state, world, manhood, reality, land, earth, country, humanity, institution, initiation, man
 
 **2 of earth**
-violence, force, intensity, strength, forcefulness
+violence, forcefulness, intensity, force, strength
 
 **3 of earth**
-way, dominance, agency, path, authority
+way, authority, path, agency, dominance
 
 **4 of earth**
-book, boy, son, word
+boy, son, word, book
 
 **5 of earth**
-trouble, problem, difficulty
+problem, trouble, difficulty
 
 **6 of earth**
-face, side, expression
+expression, side, face
 
 **7 of earth**
-escapism, flight, escape
+flight, escape, escapism
 
 **8 of earth**
 presidency, government, administration
@@ -76,10 +76,10 @@ presidency, government, administration
 slavery, bondage
 
 **10 of earth**
-vision, imagination
+imagination, vision
 
 **page of earth**
-character, type
+type, character
 
 **knight of earth**
 medicine, music
@@ -91,34 +91,34 @@ obedience, respect
 capriciousness, arbitrariness
 
 **1 of water**
-chance, fortune, mass, lot, bargain, deal, fate
+deal, chance, bargain, fate, fortune, mass, lot
 
 **2 of water**
-contact, connectedness, tie, link, connection
+connectedness, link, contact, tie, connection
 
 **3 of water**
-turn, routine, go, play, act
+routine, play, turn, act, go
 
 **4 of water**
-author, beginning, source, root
+root, beginning, source, author
 
 **5 of water**
-difference, fight, conflict
+fight, difference, conflict
 
 **6 of water**
-secrecy, privacy, silence
+privacy, silence, secrecy
 
 **7 of water**
-intellect, cause, reason
+reason, intellect, cause
 
 **8 of water**
-build, shape, frame
+frame, shape, build
 
 **9 of water**
-story, history
+history, story
 
 **10 of water**
-illusion, magic
+magic, illusion
 
 **page of water**
 hope, promise
@@ -133,37 +133,37 @@ passion, warmth
 rest, balance
 
 **1 of air**
-business, blood, rake, ancestry, contrast, line
+line, ancestry, blood, business, contrast, rake
 
 **2 of air**
-determination, purpose, use, manipulation, habit
+habit, purpose, use, determination, manipulation
 
 **3 of air**
-whiteness, honor, purity, innocence
+purity, honor, innocence, whiteness
 
 **4 of air**
-convention, rule, ruler, principle
+ruler, principle, convention, rule
 
 **5 of air**
-sex, gender, sexuality
+gender, sex, sexuality
 
 **6 of air**
 commitment, loyalty, allegiance
 
 **7 of air**
-decline, decay, fall
+decay, fall, decline
 
 **8 of air**
-testament, will
+will, testament
 
 **9 of air**
 union, marriage
 
 **10 of air**
-expectation, outlook
+outlook, expectation
 
 **page of air**
-persistence, perseverance
+perseverance, persistence
 
 **knight of air**
 pleasure, joy
@@ -175,44 +175,44 @@ mastery, supremacy
 heritage, inheritance
 
 **1 of fire**
-space, fellowship, place, home, family
+family, place, space, fellowship, home
 
 **2 of fire**
-break, transformation, displacement, translation, shift
+shift, translation, break, displacement, transformation
 
 **3 of fire**
-maturation, development, evolution, growth
+maturation, evolution, development, growth
 
 **4 of fire**
-question, uncertainty, doubt, precariousness
+uncertainty, doubt, precariousness, question
 
 **5 of fire**
-ruthlessness, harshness, cruelty
+ruthlessness, cruelty, harshness
 
 **6 of fire**
 destruction, end, ending
 
 **7 of fire**
-blessing, goodwill, grace
+grace, blessing, goodwill
 
 **8 of fire**
-oppression, oppressiveness
+oppressiveness, oppression
 
 **9 of fire**
 pain, painfulness
 
 **10 of fire**
-folly, madness
+madness, folly
 
 **page of fire**
 insufficiency, inadequacy
 
 **knight of fire**
-richness, fertility
+fertility, richness
 
 **queen of fire**
-instrument, tool
+tool, instrument
 
 **king of fire**
-castration, emasculation
+emasculation, castration
 
