@@ -12,17 +12,18 @@ See paper [here](EXAG_Workshop__Generative_Tarot.pdf).
 
 ### example output
 
+#### This a generation using the data in this repo. Figure taken from paper.↓
 ![](Screenshot_cards.png)
-*This a generation using the data in this repo. Figure taken from paper.*
 
-![](Screenshot_cards2.png)
-*This is another generation.*
+#### This is another generation.↓
 
 See the whole set of generated cards in svg format [here](cards).
 
 See the images from Google that were the "inspiration" for the card face image [here](found_imgs).
 
 See the corresponding booklet [here](booklet.md).
+
+![](Screenshot_cards2.png)
 
 ### credits
 
