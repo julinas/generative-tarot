@@ -2,6 +2,8 @@
 
 See paper [here](EXAG_Workshop__Generative_Tarot.pdf).
 
+See presentation slides [here](Generative_Tarot_EXAG_presentation.pdf).
+
 ### usage instructions
 
 - Start with a text file *themestext* that contains a list of concepts.
