@@ -1,4 +1,4 @@
-# Generative Tarot
+# generative tarot
 
 See paper [here](EXAG_Workshop__Generative_Tarot.pdf).
 
